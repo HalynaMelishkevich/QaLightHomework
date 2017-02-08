@@ -23,6 +23,7 @@ public class Task1 {
 				}
 			} catch (java.util.InputMismatchException e) { //without catching exceptions, program will be stopped on input non-numeric values or non-integer, separated with not a dot
 				System.out.println("Please, enter a numeric value separated with a dot.");
+				sc.nextLine();
 			}
 		}
 		sc.close();
