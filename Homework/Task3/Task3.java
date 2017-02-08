@@ -12,7 +12,7 @@ public class Task3 {
 		Scanner sc = new Scanner(System.in);
 		while (decision) {
 			try {
-				System.out.println("How many numbers would you like to input?");
+				System.out.println("How many numbers would you like to input? ");
 				int numberCount = sc.nextInt();
 				if (numberCount > 0) {
 					int[] numberArray = new int[numberCount];
