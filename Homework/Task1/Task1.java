@@ -23,6 +23,11 @@ public class Task1 {
 				}
 			} catch (java.util.InputMismatchException e) { //without catching exceptions, program will be stopped on input non-numeric values or non-integer, separated with not a dot
 				System.out.println("Please, enter a numeric value separated with a dot.");
+				/*nextDouble function reads line-by-line
+				 * and if exception was caught
+				 * nextDouble would not switch to a new line
+				 * so I have to do it manually, because without it there is an ETERNAL LOOP OMG!!!
+				 * */
 				sc.nextLine();
 			}
 		}
