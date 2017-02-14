@@ -21,7 +21,7 @@ public class ArrayManipulations {
 						numberArray[i] = sc.nextDouble();
 					}
 
-					System.out.println("Input number for comparing in task 7 :");
+					/*System.out.println("Input number for comparing in task 7 :");
 					double compareNumber = sc.nextDouble();
 
 					replaceBiggerNumbersThanZ(numberArray.clone(), compareNumber); // Task7
@@ -43,7 +43,8 @@ public class ArrayManipulations {
 					System.out.println("Input number for comparing in task 15: ");
 					int m = sc.nextInt();
 					returnBiggerThanM(numberArray.clone(), m); // Task15
-
+					returnZerosIfModuleBigger(numberArray.clone()); // Task16*/
+					calculateBiggerOfMultiplies(numberArray.clone());//Task17
 					System.out.println("Want to stop? Say yes: ");
 					String decisionInput = sc.next();
 					if (decisionInput.toLowerCase().equals("yes") == true) {
@@ -225,6 +226,50 @@ public class ArrayManipulations {
 			System.out.println("Task15: Array does not contain elements bigger than " + m + ".\n");
 		} else {
 			System.out.println("Task15: " + resultMultiplication);
+		}
+	}
+
+	/*
+	 * 16 Дан массив положительных и отрицательных чисел.  Заменить нулями те
+	 * числа, величина которых по модулю больше максимального числа (|a[i]| >
+	 * max{ a[0], a[1], ..., a[n]})
+	 */
+	public static void returnZerosIfModuleBigger(double[] arr) {
+		double max = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+		for (int i = 0; i < arr.length; i++) {
+			if (Math.abs(arr[i]) > max) {
+				arr[i] = 0;
+			}
+		}
+		System.out.println("Task16: " + Arrays.toString(arr));
+	}
+
+	/*
+	 * 17 Дан массив чисел с положительными и отрицательными элементы. Вычислить
+	 * произведение отрицательных элементов P1 и произведение положительных
+	 * элементов Р2. Сравнить модуль Р2 с модулем Р1 и указать, какое из
+	 * произведений по модулю больше.
+	 */
+	public static void calculateBiggerOfMultiplies(double[] arr) {
+		double negativeMult = 1.0, positiveMult = 1.0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] < 0) {
+				negativeMult *= arr[i];
+			} else if (arr[i] > 0) {
+				positiveMult *= arr[i];
+			}
+		}
+		if(Math.abs(negativeMult) > Math.abs(positiveMult)){
+			System.out.println("Task17: negative numbers multiplication result is bigger and equal to "+negativeMult);
+		}else if(Math.abs(negativeMult) < Math.abs(positiveMult)){
+			System.out.println("Task17: positive numbers multiplication result is bigger and equal to "+positiveMult);
+		}else{
+			System.out.println("Task17: multiplication results are equal.");
 		}
 	}
 }
