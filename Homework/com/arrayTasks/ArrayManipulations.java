@@ -21,30 +21,44 @@ public class ArrayManipulations {
 						numberArray[i] = sc.nextDouble();
 					}
 
-					/*System.out.println("Input number for comparing in task 7 :");
+					System.out.println("Input number for comparing in task 7 :");
 					double compareNumber = sc.nextDouble();
-
 					replaceBiggerNumbersThanZ(numberArray.clone(), compareNumber); // Task7
+					
 					returnEvenArray(numberArray.clone()); // Task6
+					
 					elementsQuantity(numberArray.clone()); // Task8
+					
 					changeMinMax(numberArray.clone()); // Task9
+					
 					printValueBiggerThanIndex(numberArray.clone()); // Task10
-
+					
 					System.out.println("Input remainder for task 11: ");
 					int remainder = sc.nextInt();
 					System.out.println("Input number for comparing in task 11: ");
 					int compare = sc.nextInt();
 					printCertainRemainder(numberArray.clone(), remainder, compare); // Task11
-
+					
 					switchNeighbourElements(numberArray.clone()); // Task12
+					
 					printBeforeZero(numberArray.clone()); // Task13
+					
 					sumMinMax(numberArray.clone()); // Task14
-
+					
 					System.out.println("Input number for comparing in task 15: ");
 					int m = sc.nextInt();
 					returnBiggerThanM(numberArray.clone(), m); // Task15
-					returnZerosIfModuleBigger(numberArray.clone()); // Task16*/
-					calculateBiggerOfMultiplies(numberArray.clone());//Task17
+					
+					returnZerosIfModuleBigger(numberArray.clone()); // Task16
+					
+					calculateBiggerOfMultiplies(numberArray.clone());// Task17
+					
+					replaceFirstMax(numberArray.clone()); // Task18
+					
+					System.out.println("Input number for adding in the end of every number in task 19: ");
+					int k = sc.nextInt();
+					returnArrayK(numberArray.clone(), k); // Task19
+
 					System.out.println("Want to stop? Say yes: ");
 					String decisionInput = sc.next();
 					if (decisionInput.toLowerCase().equals("yes") == true) {
@@ -264,12 +278,38 @@ public class ArrayManipulations {
 				positiveMult *= arr[i];
 			}
 		}
-		if(Math.abs(negativeMult) > Math.abs(positiveMult)){
-			System.out.println("Task17: negative numbers multiplication result is bigger and equal to "+negativeMult);
-		}else if(Math.abs(negativeMult) < Math.abs(positiveMult)){
-			System.out.println("Task17: positive numbers multiplication result is bigger and equal to "+positiveMult);
-		}else{
+		if (Math.abs(negativeMult) > Math.abs(positiveMult)) {
+			System.out.println("Task17: negative numbers multiplication result is bigger and equal to " + negativeMult);
+		} else if (Math.abs(negativeMult) < Math.abs(positiveMult)) {
+			System.out.println("Task17: positive numbers multiplication result is bigger and equal to " + positiveMult);
+		} else {
 			System.out.println("Task17: multiplication results are equal.");
 		}
+	}
+
+	/*
+	 * 18 Дан массив чисел. Среди них есть равные. Найти первый максимальный
+	 * элемент массива и заменить его нулем.
+	 */
+	public static void replaceFirstMax(double[] arr) {
+		int max = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > arr[max]) {
+				max = i;
+			}
+		}
+		arr[max] = 0;
+		System.out.println("Task18: " + Arrays.toString(arr));
+	}
+
+	/*
+	 * 19 Дан массив чисел. Образовать новый массив, элементами которого будут
+	 * элементы исходного, оканчивающиеся на цифру k.
+	 */
+	public static void returnArrayK(double[] arr, int k) {
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = arr[i] * 10 + k;
+		}
+		System.out.println("Task19: " + Arrays.toString(arr));
 	}
 }
