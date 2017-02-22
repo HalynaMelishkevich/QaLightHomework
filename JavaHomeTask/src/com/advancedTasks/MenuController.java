@@ -18,15 +18,66 @@ public class MenuController {
 
 	public static void decisionController() {
 		Scanner sc = new Scanner(System.in);
-		int decision = sc.nextInt();
-		switch (decision) {
-		case 1:
-			Task1.doTask1();
-			break;
-		default:
-			System.out.println("Всего хорошего!");
-			break;
+		try {
+			int decision = sc.nextInt();
+			switch (decision) {
+			case 1:
+				Task1.doTask1();
+				break;
+			case 2:
+				Task2.doTask2();
+				break;
+			case 3:
+				Task3.doTask3();
+				break;
+			case 4:
+				Task4.doTask4();
+				break;
+			case 5:
+				Task5.doTask5();
+				break;
+			case 6:
+				Task6.doTask6();
+				break;
+			case 7:
+				Task7.doTask7();
+				break;
+			case 8:
+				Task8.doTask8();
+				break;
+			case 9:
+				Task9.doTask9();
+				break;
+			case 10:
+				Task10.doTask10();
+				break;
+			case 11:
+				Task11.doTask11();
+				break;
+			default:
+				exitController();
+				break;
+			}
+			sc.close();
+		} catch (java.util.InputMismatchException e) {
+			exitController();
+			sc.close();
 		}
-		sc.close();
+	}
+
+	public static void exitController() {
+		Scanner sc = new Scanner(System.in);
+		try {
+			System.out.print("Для выхода из программы введите 1 : ");
+			if (sc.nextInt() == 1) {
+				System.exit(0);
+			} else {
+				printMenu();
+			}
+			sc.close();
+		} catch (java.util.InputMismatchException e) {
+			printMenu();
+			sc.close();
+		}
 	}
 }
