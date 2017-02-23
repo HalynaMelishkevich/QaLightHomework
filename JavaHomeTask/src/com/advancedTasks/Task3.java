@@ -8,8 +8,7 @@ public class Task3 {
 	}
 
 	public static void doTask3() {
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.print("Введите длину первой стороны треугольника: ");
 			int a1 = sc.nextInt();
 			System.out.print("Введите длину второй стороны треугольника: ");
@@ -23,11 +22,9 @@ public class Task3 {
 				System.out.println("Треугольник с такими сторонами не возможен.");
 				MenuController.exitController();
 			}
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только целые числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

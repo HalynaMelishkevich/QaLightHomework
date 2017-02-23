@@ -54,6 +54,18 @@ public class MenuController {
 			case 11:
 				Task11.doTask11();
 				break;
+			case 12:
+				Task12.doTask12();
+				break;
+			case 13:
+				Task13.doTask13();
+				break;
+			case 14:
+				Task14.doTask14();
+				break;
+			case 15:
+				Task15.doTask15();
+				break;
 			default:
 				exitController();
 				break;

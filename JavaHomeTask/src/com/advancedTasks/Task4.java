@@ -20,8 +20,7 @@ public class Task4 {
 	}
 
 	public static void doTask4() {
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.print("Введите высоту треугольника: ");
 			int height = sc.nextInt();
 			if (height < 1) {
@@ -30,11 +29,9 @@ public class Task4 {
 				printTriangle(height);
 			}
 			MenuController.exitController();
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только целые числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

@@ -32,8 +32,7 @@ public class Task5 {
 	}
 
 	public static void doTask5() {
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.print("Введите пол (М или Ж): ");
 			String sex = sc.nextLine().toUpperCase();
 			System.out.println("Введите рост (м): ");
@@ -46,11 +45,9 @@ public class Task5 {
 				System.out.println("Вводите валидные значения, пожалуйста.");
 			}
 			MenuController.exitController();
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

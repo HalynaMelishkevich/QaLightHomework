@@ -12,9 +12,8 @@ public class Task1 {
 	}
 
 	public static void doTask1() {
-		System.out.println("Введите число, факториал которого Вы хотите вычислить:");
-		Scanner sc = new Scanner(System.in);
-		try {
+		System.out.println("Введите число, факториал которого Вы хотите вычислить:");		
+		try (Scanner sc = new Scanner(System.in)) { //магия Java 8 - сканнер сам закроется
 			int factorialNumber = sc.nextInt();
 			if (factorialNumber < 1) {
 				System.out.println("Число должно быть больше 0.");
@@ -25,11 +24,9 @@ public class Task1 {
 				System.out.println("Факториал числа " + factorialNumber + " = " + factorial(factorialNumber));
 			}
 			MenuController.exitController();	
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только целые числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

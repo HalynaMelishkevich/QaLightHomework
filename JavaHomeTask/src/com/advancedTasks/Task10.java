@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Task10 {
 	public static void doTask10() {
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Введите строку:");
 			String s = sc.nextLine();
 			System.out.println("Введите количество повторов:");
@@ -14,11 +13,9 @@ public class Task10 {
 				System.out.println(i + " : " + s);
 			}
 			MenuController.exitController();
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите подходящие значения, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

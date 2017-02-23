@@ -18,8 +18,7 @@ public class Task6 {
 
 	public static void doTask6() {
 		System.out.println("Введите целое число:");
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)){
 			int compareNumber = Math.abs(sc.nextInt());
 			if (isThereEqual(compareNumber)) {
 				System.out.println("Это число имеет одинаковые цифры.");
@@ -27,11 +26,9 @@ public class Task6 {
 				System.out.println("Это число не имеет одинаковых цифр.");
 			}
 			MenuController.exitController();
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только целые числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

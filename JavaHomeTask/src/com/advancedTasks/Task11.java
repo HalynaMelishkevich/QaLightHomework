@@ -25,8 +25,7 @@ public class Task11 {
 	}
 
 	public static void doTask11() {
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Введите первое число:");
 			Double x1 = sc.nextDouble();
 			System.out.println("Введите второе число:");
@@ -35,11 +34,9 @@ public class Task11 {
 			Double x3 = sc.nextDouble();
 			System.out.println("Сумма большего и меньшего значений равна " + calculateSumMinMax(x1, x2, x3));
 			MenuController.exitController();
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

@@ -8,8 +8,7 @@ public class Task2 {
 	}
 
 	public static void doTask2() {
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.print("Введите абсциссу первой точки: ");
 			double x1 = sc.nextDouble();
 			System.out.print("Введите ординату первой точки: ");
@@ -18,13 +17,11 @@ public class Task2 {
 			double x2 = sc.nextDouble();
 			System.out.print("Введите ординату второй точки: ");
 			double y2 = sc.nextDouble();
-			System.out.println("Расстояние между двумя точками = " + getDistance(x1, y1, x2, y2));			
+			System.out.println("Расстояние между двумя точками = " + getDistance(x1, y1, x2, y2));
 			MenuController.exitController();
-			sc.close();
-		} catch (java.util.InputMismatchException e) {			
+		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }

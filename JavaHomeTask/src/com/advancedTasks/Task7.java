@@ -8,8 +8,7 @@ public class Task7 {
 	}
 
 	public static void doTask7() {
-		Scanner sc = new Scanner(System.in);
-		try {
+		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Введите длину бассейна:");
 			double lenght = sc.nextDouble();
 			System.out.println("Введите ширину бассейна:");
@@ -20,11 +19,9 @@ public class Task7 {
 			// без форматирования большое число будет в научном виде (1.0Е9)
 			System.out.format("%50.2f%n", calculateV(width, lenght, height));
 			MenuController.exitController();
-			sc.close();
 		} catch (java.util.InputMismatchException e) {
 			System.out.println("Вводите только числа, пожалуйста.");
 			MenuController.exitController();
-			sc.close();
 		}
 	}
 }
